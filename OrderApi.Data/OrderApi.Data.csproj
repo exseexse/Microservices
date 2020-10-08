@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Microservices.Core\Microservices.Core.csproj" />
+    <ProjectReference Include="..\OrderApi.DataAccess\OrderApi.DataAccess.csproj" />
+    <ProjectReference Include="..\OrderApi.Model\OrderApi.Model.csproj" />
+  </ItemGroup>
+
+</Project>
