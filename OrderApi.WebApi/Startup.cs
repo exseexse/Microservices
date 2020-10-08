@@ -30,6 +30,9 @@ namespace OrderApi.WebApi
             services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitMq"));
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddAutoMapper(typeof(Startup));
+
+
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<,>));
             services.AddTransient<IRequestHandler<GetPaidOrderQuery, List<Order>>, GetPaidOrderQueryHandler>();
             services.AddTransient<IRequestHandler<GetOrderByIdQuery, Order>, GetOrderByIdQueryHandler>();
             services.AddTransient<IRequestHandler<GetOrderByCustomerIdQuery, List<Order>>, GetOrderByCustomerIdQueryHandler>();

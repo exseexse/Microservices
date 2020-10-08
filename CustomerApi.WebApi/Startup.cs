@@ -39,7 +39,7 @@ namespace CustomerApi.WebApi
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddAutoMapper(typeof(Startup));
 
-
+            services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<,>));
             services.AddTransient<ICustomerRepository, CustomerRepository>();
 
             services.AddTransient<ICustomerUpdateSender, CustomerUpdateSender>();
