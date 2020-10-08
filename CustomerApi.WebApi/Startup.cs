@@ -40,7 +40,7 @@ namespace CustomerApi.WebApi
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<,>));
-            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            //services.AddTransient<ICustomerRepository, CustomerRepository>();
 
             services.AddTransient<ICustomerUpdateSender, CustomerUpdateSender>();
             services.AddTransient<IRequestHandler<CreateCustomerCommand, Customer>, CreateCustomerCommandHandler>();
